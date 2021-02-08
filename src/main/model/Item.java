@@ -57,7 +57,7 @@ public class Item {
     // MODIFIES: this
     // EFFECTS: used quantity is subtracted from current quantity
     public Boolean changeItemQuantity(int changeQuantity) {
-        if (quantity < (changeQuantity * -1)) {
+        if (changeQuantity < 0 && quantity < (-1 * changeQuantity)) {
             return false;
         } else {
             quantity += changeQuantity;

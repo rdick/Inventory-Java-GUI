@@ -71,7 +71,7 @@ public class Inventory {
     //    EFFECTS: get item by name
     public Item getItemByName(String itemName) {
         for (Item item : allItems) {
-            if (item.getName() == itemName) {
+            if (item.getName().equals(itemName)) {
                 return item;
             }
         }
