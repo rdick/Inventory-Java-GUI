@@ -9,6 +9,7 @@ The main functions of it are:
 3. Add item quantity
 4. Review a list of current inventory items and their quantity
 5. Review details about a specific inventory item
+6. Find total Cost of Inventory
 
 ## Who will use this application?
 
@@ -41,9 +42,12 @@ item in my inventory
 item in my inventory
 
 4. As a user, I want to be able to view a list of the items 
-   and their corresponding quantity in my inventory
+   and their corresponding id and quantity in my inventory
 
 5. As a user, I want to be able to select an item in my collection 
 and view the details of that item
+   
+6. As a user, I want to be able view the total value of all the 
+   items in the inventory
 
 
