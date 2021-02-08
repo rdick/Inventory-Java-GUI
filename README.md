@@ -31,17 +31,17 @@ currently in stock.
 ##User Story
 Below are the following user stories
 
-1. As a user, I want to be able to add an inventory item to my 
-collection (name, quantity, details)
+1. As a user, I want to be able to add an item (name, quantity
+   , details) to my inventory  
 
 2. As a user, I want to be able to increase the quantity of an 
-inventory item in my collection
+item in my inventory
 
 3. As a user, I want to be able to reduce the quantity of an 
-inventory item in my collection
+item in my inventory
 
-4. As a user, I want to be able to view a list of the inventory 
-items and their corresponding quantity in my collection
+4. As a user, I want to be able to view a list of the items 
+   and their corresponding quantity in my inventory
 
 5. As a user, I want to be able to select an item in my collection 
 and view the details of that item
