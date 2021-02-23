@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+// Represents an Inventory that has many Items
 public class Inventory {
     private List<Item> allItems;
 

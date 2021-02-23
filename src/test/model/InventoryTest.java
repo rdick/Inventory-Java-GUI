@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
+// Tests the Inventory Class of Code
 class InventoryTests {
     Inventory newInventory = new Inventory();
 
