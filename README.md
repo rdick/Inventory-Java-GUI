@@ -9,6 +9,8 @@ The main functions of it are:
 3. Add item quantity
 4. Review a list of current inventory items and all of their information
 5. Find total Cost of Inventory
+6. Save inventory data
+7. Load previous inventory Data
 
 ## Who will use this application?
 
@@ -45,5 +47,9 @@ item in my inventory
    
 5. As a user, I want to be able view the total value of all the 
    items in the inventory
+
+6. As a user, I want to be able to save inventory data to be accessed at a later 
+   date
+7. As a user, I want to be able to be able to load previous inventory data
 
 
