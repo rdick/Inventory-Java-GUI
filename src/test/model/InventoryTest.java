@@ -7,15 +7,17 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 // Tests the Inventory Class of Code
-class InventoryTests {
+class InventoryTest {
     Inventory newInventory = new Inventory();
 
+    // EFFECT: Test add incorrect item
     @Test
     public void testAddItemIncorrect(){
         newInventory.addItem("item1",-2,20,"high quality");
         newInventory.addItem("item1",0,-20,"high quality");
     }
 
+    // EFFECT: Test all item info
     @Test
     public void testAllItemInfo(){
         assertEquals("No items available",newInventory.allItemInfo());
@@ -37,6 +39,7 @@ class InventoryTests {
                 newInventory.allItemInfo());
     }
 
+    // EFFECT: Test add item
     @Test
     public void testAddItem() {
         newInventory.addItem("item1",5,20,"high quality");
@@ -45,8 +48,7 @@ class InventoryTests {
         assertEquals(2,newInventory.size());
     }
 
-
-
+    // EFFECT: Test change quantity of item
     @Test
     public void testChangeQuantity() {
         assertFalse(newInventory.changeInventoryQuantity("item1",-10));
@@ -60,6 +62,7 @@ class InventoryTests {
         assertTrue(newInventory.changeInventoryQuantity("item1",10));
     }
 
+    // EFFECT: Test total value of inventory
     @Test
     public void testTotalValue(){
         assertEquals(0,newInventory.totalValue());

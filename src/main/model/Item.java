@@ -1,7 +1,10 @@
 package model;
 
-// Represents an Item having an id, name, quantity, and details
-public class Item {
+import org.json.JSONObject;
+import persistence.Writable;
+
+// Represents an item with id, name, quantity, costPerUnit and details
+public class Item implements Writable {
     private static int nextItemId = 1; // tracks id of next account
     private int id;                    // item id
     private String name;               // item name
@@ -38,9 +41,19 @@ public class Item {
         return name;
     }
 
-    // EFFECTS: returns a string of details about an item
+    // EFFECTS: returns a int of quantities about an item
     public int getQuantity() {
         return quantity;
+    }
+
+    // EFFECTS: returns an int of cost per unit about an item
+    public int getCostPerUnit() {
+        return costPerUnit;
+    }
+
+    // EFFECTS: returns a string of details about an item
+    public String getDetails() {
+        return details;
     }
 
     // EFFECTS: returns a string of id, name, cost/unit and quantity about an item
@@ -65,9 +78,16 @@ public class Item {
         }
     }
 
-    // EFFECTS: returns a string of details about an item
-    public int getCostPerUnit() {
-        return costPerUnit;
-    }
 
+    // 1. Persistence Functions
+    // EFFECTS: creates a JSON Object for an item
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("quantity", quantity);
+        json.put("costPerUnit", costPerUnit);
+        json.put("details", details);
+        return json;
+    }
 }

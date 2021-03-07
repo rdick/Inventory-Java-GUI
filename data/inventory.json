@@ -1,0 +1,14 @@
+{"inventory": [
+    {
+        "quantity": 5,
+        "name": "dog",
+        "details": "fluffy",
+        "costPerUnit": 10
+    },
+    {
+        "quantity": 20,
+        "name": "Cat",
+        "details": "fast runner",
+        "costPerUnit": 20
+    }
+]}

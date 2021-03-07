@@ -1,0 +1,14 @@
+{"inventory": [
+    {
+        "quantity": 10,
+        "name": "item1",
+        "details": "high quality",
+        "costPerUnit": 10
+    },
+    {
+        "quantity": 20,
+        "name": "item2",
+        "details": "high quality",
+        "costPerUnit": 20
+    }
+]}

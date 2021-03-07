@@ -1,12 +1,17 @@
 package model;
 
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
 // Represents an Inventory that has many Items
-public class Inventory {
+public class Inventory implements Writable {
     private List<Item> allItems;
 
     // EFFECTS: constructs an empty collection of items
@@ -67,7 +72,8 @@ public class Inventory {
         }
     }
 
-    // 5. REQUIRES: item name that exists
+    // 5.
+    // REQUIRES: item name that exists
     //    EFFECTS: get item by name
     public Item getItemByName(String itemName) {
         for (Item item : allItems) {
@@ -79,18 +85,6 @@ public class Inventory {
 
     }
 
-//    //6.
-//    //    REQUIRES: itemId that exists
-//    //    EFFECTS: finds Item by itemId
-//    private Item getItemById(List<Item> allItems, int itemId) {
-//        for (Item item : allItems) {
-//            if (item.getId() == itemId) {
-//                return item;
-//            }
-//        }
-//        return null;
-//    }
-
     //1. Helper
     //    EFFECTS: checks if list of all items is empty
     private static Boolean checkListEmpty(List<Item> allItems) {
@@ -100,9 +94,42 @@ public class Inventory {
         return false;
     }
 
-    // 2.
+    // 2. Helper
     //    EFFECTS: returns number of items in inventory
     public int size() {
         return allItems.size();
+    }
+
+    // 3. Helper
+    //    EFFECTS: adds new Item to array
+    public void add(Item newItem) {
+        this.allItems.add(newItem);
+    }
+
+    // 1. Persistence Functions
+    //     EFFECTS: returns JSON array of items named "inventory"
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("inventory", inventoryToJson());
+        return json;
+    }
+
+    // 2. Persistence Functions
+    //     EFFECTS: returns Items in this inventory as a JSON array of items
+    private JSONArray inventoryToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Item i : allItems) {
+            jsonArray.put(i.toJson());
+        }
+
+        return jsonArray;
+    }
+
+    // 3. Persistence Functions
+    //     EFFECTS: returns an unmodifiable list of items in this inventory
+    public List<Item> getAllItems() {
+        return Collections.unmodifiableList(allItems);
     }
 }
