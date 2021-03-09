@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+// Inventory App main body of function
 public class InventoryApp {
     private static final String JSON_STORE = "./data/inventory.json";
     private Scanner input1;
