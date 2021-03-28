@@ -130,6 +130,6 @@ public class Inventory implements Writable {
     // 3. Persistence Functions
     //     EFFECTS: returns an unmodifiable list of items in this inventory
     public List<Item> getAllItems() {
-        return Collections.unmodifiableList(allItems);
+        return allItems;
     }
 }
