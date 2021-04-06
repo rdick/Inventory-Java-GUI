@@ -1,32 +1,14 @@
 {"inventory": [
     {
-        "quantity": 1010,
-        "name": "dog",
-        "details": "sdfa",
+        "quantity": 110,
+        "name": "Dog",
+        "details": "furry",
         "costPerUnit": 10
     },
     {
         "quantity": 10,
-        "name": "dog1",
-        "details": "sdfa",
-        "costPerUnit": 10
-    },
-    {
-        "quantity": 10,
-        "name": "dog1",
-        "details": "sdfa",
-        "costPerUnit": 10
-    },
-    {
-        "quantity": 10,
-        "name": "cat",
-        "details": "10",
-        "costPerUnit": 10
-    },
-    {
-        "quantity": 10,
-        "name": "Juniper",
-        "details": "Junnnnes",
+        "name": "Dog",
+        "details": "furry",
         "costPerUnit": 10
     }
 ]}

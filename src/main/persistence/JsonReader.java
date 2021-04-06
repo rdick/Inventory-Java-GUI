@@ -1,5 +1,6 @@
 package persistence;
 
+import exceptions.ExceptionIncorrectNumber;
 import model.Inventory;
 import model.Item;
 import org.json.*;
@@ -63,7 +64,12 @@ public class JsonReader {
         int    quantity = jsonObject.getInt("quantity");
         int    costPerUnit = jsonObject.getInt("costPerUnit");
         String details = jsonObject.getString("details");
-        Item item = new Item(name, quantity, costPerUnit, details);
+        Item item = null;
+        try {
+            item = new Item(name, quantity, costPerUnit, details);
+        } catch (ExceptionIncorrectNumber e) {
+            System.out.println("Cannot create " + name + "with negative cost or quantity");
+        }
         inv.add(item);
     }
 }

@@ -1,5 +1,6 @@
 package ui;
 
+import exceptions.ExceptionIncorrectNumber;
 import model.Inventory;
 
 import javax.sound.sampled.AudioSystem;
@@ -112,7 +113,11 @@ public class Card1 implements ActionListener {
         int cost = Integer.parseInt(costTextField.getText());
         String details = detailsTextField.getText();
 
-        newInventory.addItem(name,quantity,cost,details);
+        try {
+            newInventory.addItem(name,quantity,cost,details);
+        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+            exceptionIncorrectNumber.printStackTrace();
+        }
         System.out.println(newInventory.size());
         System.out.println(newInventory.allItemInfo());
 

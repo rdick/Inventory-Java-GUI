@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.ExceptionIncorrectNumber;
 import org.json.JSONObject;
 import persistence.Writable;
 
@@ -14,20 +15,20 @@ public class Item implements Writable {
 
     // REQUIRES: initialQuantity >= 0 and Cost Per Unit >= 0
     // EFFECTS: constructs an item with an name, quantity and details
-    public Item(String itemName, int initialQuantity, int initialCostPerUnit, String itemDetails) {
+    public Item(String itemName, int initialQuantity, int initialCostPerUnit, String itemDetails) throws ExceptionIncorrectNumber {
         id = nextItemId++;
         name = itemName;
         details = itemDetails;
         if (initialCostPerUnit >= 0) {
             costPerUnit = initialCostPerUnit;
         } else {
-            costPerUnit = 0;
+            throw new ExceptionIncorrectNumber();
         }
 
         if (initialQuantity >= 0) {
             quantity = initialQuantity;
         } else {
-            quantity = 0;
+            throw new ExceptionIncorrectNumber();
         }
     }
 
@@ -69,9 +70,9 @@ public class Item implements Writable {
     // REQUIRES: (quantity - changeQuantity) >= 0
     // MODIFIES: this
     // EFFECTS: used quantity is subtracted from current quantity
-    public Boolean changeItemQuantity(int changeQuantity) {
+    public Boolean changeItemQuantity(int changeQuantity) throws ExceptionIncorrectNumber {
         if (changeQuantity < 0 && quantity < (-1 * changeQuantity)) {
-            return false;
+            throw new ExceptionIncorrectNumber();
         } else {
             quantity += changeQuantity;
             return true;

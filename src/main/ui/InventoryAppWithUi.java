@@ -17,9 +17,6 @@ public class InventoryAppWithUi {
     final String tabName5 = "Load Data";
     final String tabName6 = "Save Data";
 
-    private static final String JSON_STORE = "./data/inventory.json";
-    private JsonWriter jsonWriter = new JsonWriter(JSON_STORE);
-    private JsonReader jsonReader = new JsonReader(JSON_STORE);
     private Inventory newInventory;
 
     // Create App without existing inventory

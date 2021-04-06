@@ -52,4 +52,23 @@ item in my inventory
    
 7. As a user, I want to be able to load previous inventory data from a json file
 
+## Phase 4: Task 2
+**Task Completed:** Create A Robust Class
+**Class Chosen:** Item
+**Methods Affected:** Constructor and changeItemQuantity
+**Effect:** If a user creates a new item with a negative quantity or cost per unit it will throw an error.
+            If a user changes the quantity of an existing item to make the quantity of the item negative an error will 
+be thrown.
+    
+## Phase 4: Task 3
+During this project I tried to make my classes as simple as possible. An example of this is how I had one main class
+that had my UI and I had 1 class for every tab of my UI.
 
+If I were to change this Application I could (based on my UML Diagram):   
+
+1. Create another object that would replace Inventory for some classes. This would result in lower
+coupling. I noticed that I am using Inventory Object in almost every class.
+   
+2. Separate some of my function into additional classes. I found that to complete the project as quickly as possible I
+   used the same functions in multiple methods. If I were to continue this GUI further I would do a deep dive into all
+   of my code and extract common functions from the application. This would increase the cohesion of the application.

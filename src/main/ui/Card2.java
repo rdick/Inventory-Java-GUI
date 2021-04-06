@@ -1,5 +1,6 @@
 package ui;
 
+import exceptions.ExceptionIncorrectNumber;
 import model.Inventory;
 
 import javax.swing.*;
@@ -62,7 +63,11 @@ public class Card2 implements ActionListener {
         String itemName = name2TextField.getText();
         int itemQuantity = Integer.parseInt(quantity2TextField.getText());
 
-        newInventory.changeInventoryQuantity(itemName,itemQuantity);
+        try {
+            newInventory.changeInventoryQuantity(itemName,itemQuantity);
+        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+            exceptionIncorrectNumber.printStackTrace();
+        }
         System.out.println(newInventory.allItemInfo());
     }
 }

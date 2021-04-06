@@ -1,5 +1,6 @@
 package ui;
 
+import exceptions.ExceptionIncorrectNumber;
 import model.Inventory;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -34,9 +35,17 @@ public class InventoryApp {
             if (choice1 == 1) {
                 mainAddNewItem(newInventory);
             } else if (choice1 == 2) {
-                mainReduceInventory(newInventory);
+                try {
+                    mainReduceInventory(newInventory);
+                } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+                    exceptionIncorrectNumber.printStackTrace();
+                }
             } else if (choice1 == 3) {
-                mainAddInventory(newInventory);
+                try {
+                    mainAddInventory(newInventory);
+                } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+                    exceptionIncorrectNumber.printStackTrace();
+                }
             } else if (choice1 == 4) {
                 System.out.println(newInventory.allItemInfo() + "\n");
             } else if (choice1 == 5) {
@@ -89,13 +98,17 @@ public class InventoryApp {
         System.out.println("What are the specific details of the item?");
         String details1 = sc5.nextLine();
 
-        newInventory.addItem(name1, quantity1, costPerUnit1, details1);
+        try {
+            newInventory.addItem(name1, quantity1, costPerUnit1, details1);
+        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+            exceptionIncorrectNumber.printStackTrace();
+        }
         System.out.println("New Item Added, Inventory Size: " + Integer.toString(newInventory.size()));
     }
 
     //    REQUIRES: name has to be in inventory AND quantity of item cannot be negative
     //    EFFECT: Asks the user quantity they want to add and adds quantity based on their answer
-    private static void mainReduceInventory(Inventory newInventory) {
+    private static void mainReduceInventory(Inventory newInventory) throws ExceptionIncorrectNumber {
 
         Scanner sc6 = new Scanner(System.in);
         Scanner sc7 = new Scanner(System.in);
@@ -115,7 +128,7 @@ public class InventoryApp {
 
     //    REQUIRES: name has to be in inventory AND quantity of item cannot be negative
     //    EFFECT: Asks the user quantity they want to subtract and minuses quantity based on their answer
-    private static void mainAddInventory(Inventory newInventory) {
+    private static void mainAddInventory(Inventory newInventory) throws ExceptionIncorrectNumber {
         Scanner sc8 = new Scanner(System.in);
         Scanner sc9 = new Scanner(System.in);
 
