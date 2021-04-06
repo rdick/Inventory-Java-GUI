@@ -1,7 +1,7 @@
 package model;
 
 
-import exceptions.ExceptionIncorrectNumber;
+import exceptions.ExcepNegNum;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
@@ -24,7 +24,7 @@ public class Inventory implements Writable {
     // MODIFIES: this
     // EFFECTS: adds a new item to the list,
     //          if initialQuantity is less than 0 quantity is set to 0
-    public void addItem(String name, int quantity, int costPerUnit, String details) throws ExceptionIncorrectNumber {
+    public void addItem(String name, int quantity, int costPerUnit, String details) throws ExcepNegNum {
         Item newItem = null;
         newItem = new Item(name, quantity,costPerUnit, details);
         this.allItems.add(newItem);
@@ -49,7 +49,7 @@ public class Inventory implements Writable {
     //    MODIFIES: this
     //    EFFECTS: add or subtract quantity from from current quantity
     //             return false if item id does not exist OR cannot subtract because it will create negative quantity
-    public boolean changeInventoryQuantity(String itemName, int changeQuantity) throws ExceptionIncorrectNumber {
+    public boolean changeInventoryQuantity(String itemName, int changeQuantity) throws ExcepNegNum {
         Item foundItem = getItemByName(itemName);
 
         if (foundItem == null) {

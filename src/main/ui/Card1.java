@@ -1,6 +1,6 @@
 package ui;
 
-import exceptions.ExceptionIncorrectNumber;
+import exceptions.ExcepNegNum;
 import model.Inventory;
 
 import javax.sound.sampled.AudioSystem;
@@ -115,8 +115,8 @@ public class Card1 implements ActionListener {
 
         try {
             newInventory.addItem(name,quantity,cost,details);
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
-            exceptionIncorrectNumber.printStackTrace();
+        } catch (ExcepNegNum excepNegNum) {
+            excepNegNum.printStackTrace();
         }
         System.out.println(newInventory.size());
         System.out.println(newInventory.allItemInfo());

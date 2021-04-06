@@ -1,6 +1,6 @@
 package model;
 
-import exceptions.ExceptionIncorrectNumber;
+import exceptions.ExcepNegNum;
 import org.junit.jupiter.api.Test;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -52,13 +52,13 @@ public class JsonWriterTest extends JsonTest {
             Inventory inv = new Inventory();
             try {
                 inv.addItem("item1",10,10,"high quality");
-            } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
-                exceptionIncorrectNumber.printStackTrace();
+            } catch (ExcepNegNum excepNegNum) {
+                excepNegNum.printStackTrace();
             }
             try {
                 inv.addItem("item2",20,20,"high quality");
-            } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
-                exceptionIncorrectNumber.printStackTrace();
+            } catch (ExcepNegNum excepNegNum) {
+                excepNegNum.printStackTrace();
             }
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralInventory.json");
             writer.open();

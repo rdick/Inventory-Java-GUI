@@ -1,6 +1,6 @@
 package ui;
 
-import exceptions.ExceptionIncorrectNumber;
+import exceptions.ExcepNegNum;
 import model.Inventory;
 
 import javax.swing.*;
@@ -65,8 +65,8 @@ public class Card2 implements ActionListener {
 
         try {
             newInventory.changeInventoryQuantity(itemName,itemQuantity);
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
-            exceptionIncorrectNumber.printStackTrace();
+        } catch (ExcepNegNum excepNegNum) {
+            excepNegNum.printStackTrace();
         }
         System.out.println(newInventory.allItemInfo());
     }

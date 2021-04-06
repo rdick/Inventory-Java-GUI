@@ -1,10 +1,7 @@
 package model;
 
-import exceptions.ExceptionIncorrectNumber;
+import exceptions.ExcepNegNum;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import java.util.ArrayList;
-import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 // Tests the Inventory Class of Code
@@ -17,14 +14,14 @@ class InventoryTest {
         try {
             newInventory.addItem("item1",-2,20,"high quality");
             fail("can't add item incorrectly");
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             // expected
         }
 
         try {
             newInventory.addItem("item1",0,-20,"high quality");
             fail("can't add item incorrectly");
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             // expected
         }
     }
@@ -36,7 +33,7 @@ class InventoryTest {
 
         try {
             newInventory.addItem("item1",5,20,"high quality");
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("Something wrong with program");
         }
         Item item1 = newInventory.getItemByName("item1");
@@ -48,7 +45,7 @@ class InventoryTest {
 
         try {
             newInventory.addItem("item2",10,5,"low quality");
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("Something wrong with program");
         }
         Item item2 = newInventory.getItemByName("item2");
@@ -65,14 +62,14 @@ class InventoryTest {
         try {
             newInventory.addItem("item1",5,20,"high quality");
             assertEquals(1,newInventory.size());
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("Something wrong with program");
         }
 
         try {
             newInventory.addItem("item2",10,5,"low quality");
             assertEquals(2,newInventory.size());
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("Something wrong with program");
         }
 
@@ -83,7 +80,7 @@ class InventoryTest {
     public void testChangeQuantity() {
         try {
             assertEquals(newInventory.changeInventoryQuantity("item1",10), false);
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             // expected
         }
 
@@ -91,12 +88,12 @@ class InventoryTest {
             newInventory.addItem("item1",5,20,"high quality");
             newInventory.changeInventoryQuantity("item1",-10);
             fail("Program should not be able to reduce quantity that much");
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             // expected
         }
         try {
             assertTrue(newInventory.changeInventoryQuantity("item1",10));
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("Program should not have error");
         }
     }
@@ -108,7 +105,7 @@ class InventoryTest {
         try {
             newInventory.addItem("item1",5,20,"high quality");
             assertEquals(100,newInventory.totalValue());
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("there should be no error");
         }
 
@@ -116,7 +113,7 @@ class InventoryTest {
             newInventory.addItem("item2",10,5,"low quality");
             assertEquals(150,newInventory.totalValue());
 
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("there should be no error");
         }
     }
@@ -129,14 +126,14 @@ class InventoryTest {
             newInventory.addItem("item1",5,20,"high quality");
             newInventory.changeInventoryQuantity("item1",-10);
             fail("Program should not be able to reduce quantity that much");
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             // expected
         }
 
         // Change Quantity CORRECTLY
         try {
             assertTrue(newInventory.changeInventoryQuantity("item1",10));
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("Program should not have error");
         }
 
@@ -145,14 +142,14 @@ class InventoryTest {
         try {
             newInventory.addItem("item2",-2,20,"high quality");
             fail("can't add item incorrectly");
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             // expected
         }
 
         try {
             newInventory.addItem("item3",0,-20,"high quality");
             fail("can't add item incorrectly");
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             // expected
         }
 
@@ -162,14 +159,14 @@ class InventoryTest {
         try {
             newInventory.addItem("item4",5,20,"high quality");
             assertEquals(2,newInventory.size());
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("Something wrong with program");
         }
 
         try {
             newInventory.addItem("item5",10,5,"low quality");
             assertEquals(3,newInventory.size());
-        } catch (ExceptionIncorrectNumber exceptionIncorrectNumber) {
+        } catch (ExcepNegNum excepNegNum) {
             fail("Something wrong with program");
         }
     }
