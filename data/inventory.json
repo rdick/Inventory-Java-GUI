@@ -1,14 +1,38 @@
 {"inventory": [
     {
-        "quantity": 110,
-        "name": "Dog",
-        "details": "furry",
+        "quantity": 20,
+        "name": "Large Pipe",
+        "details": "A large Pipe",
         "costPerUnit": 10
     },
     {
-        "quantity": 10,
-        "name": "Dog",
-        "details": "furry",
+        "quantity": 20,
+        "name": "Small Pipe",
+        "details": "A Small Pipe",
         "costPerUnit": 10
+    },
+    {
+        "quantity": 70,
+        "name": "Medium Pipe",
+        "details": "A Medium Pipe",
+        "costPerUnit": 30
+    },
+    {
+        "quantity": 200,
+        "name": "Extra Small Pipe",
+        "details": "A Medium Pipe",
+        "costPerUnit": 5
+    },
+    {
+        "quantity": 250,
+        "name": "Bolts",
+        "details": "Bolts for Pipe",
+        "costPerUnit": 2
+    },
+    {
+        "quantity": 309,
+        "name": "Screws",
+        "details": "Screws For Pipes",
+        "costPerUnit": 2
     }
 ]}
