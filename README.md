@@ -51,16 +51,8 @@ item in my inventory
 6. As a user, I want to be able to save inventory data to a json file
    
 7. As a user, I want to be able to load previous inventory data from a json file
-
-## Phase 4: Task 2
-**Task Completed:** Create A Robust Class
-**Class Chosen:** Item
-**Methods Affected:** Constructor and changeItemQuantity
-**Effect:** If a user creates a new item with a negative quantity or cost per unit it will throw an error.
-            If a user changes the quantity of an existing item to make the quantity of the item negative an error will 
-be thrown.
     
-## Phase 4: Task 3
+## Future Improvments
 During this project I tried to make my classes as simple as possible. An example of this is how I had one main class
 that had my UI and I had 1 class for every tab of my UI.
 
