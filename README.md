@@ -1,6 +1,7 @@
 # Inventory Tracking Application
 
 ## What does this application do?
+https://www.loom.com/share/92746e0022274d3f9053fef82b87d665
 <img width="642" alt="Screen Shot 2022-02-04 at 8 34 09 PM" src="https://user-images.githubusercontent.com/62073529/152627436-4f8bb28c-06ec-42db-a116-e4bc86201f54.png">
 
 This application allows companies to track their current inventory.
