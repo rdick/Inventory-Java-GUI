@@ -27,7 +27,7 @@ This application be used by *two groups* of people:
 
 <img width="642" alt="Screen Shot 2022-02-04 at 8 34 40 PM" src="https://user-images.githubusercontent.com/62073529/152627444-31439f45-8c53-4fce-b33c-ac9a48287fd2.png">
 
-## Why create this projects?
+## Why create this project?
 
 One of the ***big problems*** at my company is 
  we are not tracking our inventory accurately. If this system is 
